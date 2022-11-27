@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\esra-\Desktop\Kobizon\Almanya\alamanya-api\WebAPI\bin\Release\net5.0\publish\</_PublishTargetUrl>
+    <History>True|2022-11-24T13:09:35.7032530Z;True|2022-11-24T16:09:01.0932134+03:00;True|2022-11-24T15:52:58.9666453+03:00;True|2022-11-23T16:52:05.5879623+03:00;True|2022-11-22T11:43:29.4309086+03:00;True|2022-11-22T11:05:19.7029221+03:00;True|2022-11-22T10:41:39.7428184+03:00;True|2022-11-22T10:41:23.1086088+03:00;True|2022-11-21T17:30:06.3026125+03:00;</History>
+  </PropertyGroup>
+</Project>
