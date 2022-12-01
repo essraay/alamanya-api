@@ -22,7 +22,7 @@ namespace WebAPI.Controllers
     {
         IUserService _userService;
         IJWTAuthenticationManager _jWTAuthenticationManager;
-        IMailService _mailService;
+        //IMailService _mailService;
 
         public UsersController(IUserService userService, IJWTAuthenticationManager jWTAuthenticationManager)
         {
@@ -113,7 +113,7 @@ namespace WebAPI.Controllers
                 Subject = "Yeni şifreniz",
                 Body = newPassword,
             };
-            await _mailService.SendEmailAsync(mail);
+            //await _mailService.SendEmailAsync(mail);
             _userService.Update(user);
             return Ok(new { message = "Mail adresinize yeni şifreniz gönderildi." });
         }

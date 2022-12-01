@@ -45,6 +45,10 @@ C:\Users\esra-\Desktop\Kobizon\Almanya\alamanya-api\WebAPI\obj\Release\net5.0\Pu
 C:\Users\esra-\Desktop\Kobizon\Almanya\alamanya-api\WebAPI\obj\Release\net5.0\PubTmp\Out\wwwroot\StaticFiles\images\WEMJJTVMNFNR.pdf
 C:\Users\esra-\Desktop\Kobizon\Almanya\alamanya-api\WebAPI\obj\Release\net5.0\PubTmp\Out\wwwroot\StaticFiles\images\WPULOFPKMAFJ.pdf
 C:\Users\esra-\Desktop\Kobizon\Almanya\alamanya-api\WebAPI\obj\Release\net5.0\PubTmp\Out\wwwroot\StaticFiles\images\YEFJILEPTISO.pdf
+C:\Users\esra-\Desktop\Kobizon\Almanya\alamanya-api\WebAPI\obj\Release\net5.0\PubTmp\Out\wwwroot\StaticFiles\uploads\CDFHTSWWLRTI.pdf
+C:\Users\esra-\Desktop\Kobizon\Almanya\alamanya-api\WebAPI\obj\Release\net5.0\PubTmp\Out\wwwroot\StaticFiles\uploads\WCNDVMUNVJGD.pdf
+C:\Users\esra-\Desktop\Kobizon\Almanya\alamanya-api\WebAPI\obj\Release\net5.0\PubTmp\Out\wwwroot\StaticFiles\uploads\WFIEEASKGKST.html
+C:\Users\esra-\Desktop\Kobizon\Almanya\alamanya-api\WebAPI\obj\Release\net5.0\PubTmp\Out\wwwroot\StaticFiles\uploads\WRKPMANYCESI.pdf
 C:\Users\esra-\Desktop\Kobizon\Almanya\alamanya-api\WebAPI\obj\Release\net5.0\PubTmp\Out\wwwroot\vite.svg
 C:\Users\esra-\Desktop\Kobizon\Almanya\alamanya-api\WebAPI\obj\Release\net5.0\PubTmp\Out\appsettings.Development.json
 C:\Users\esra-\Desktop\Kobizon\Almanya\alamanya-api\WebAPI\obj\Release\net5.0\PubTmp\Out\appsettings.json

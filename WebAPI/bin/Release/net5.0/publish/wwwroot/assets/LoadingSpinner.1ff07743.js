@@ -1,0 +1,1 @@
+import{r as n}from"./index.es.e11e8e1c.js";import{j as e}from"./index.25d6ac81.js";const i=()=>e("div",{className:"d-flex justify-content-center align-items-center p-4",children:e(n,{})});export{i as L};
