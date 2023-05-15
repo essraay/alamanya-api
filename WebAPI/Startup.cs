@@ -1,5 +1,7 @@
 using Business.Abstract;
 using Business.Concrete;
+using Core.Services;
+using Core.Settings;
 using DataAccess.Abstract;
 using DataAccess.Concrete;
 using Microsoft.AspNet.Identity;
@@ -69,6 +71,12 @@ namespace WebAPI
             services.AddSingleton<IApplicationFormService, ApplicationFormManager>();
             services.AddSingleton<IApplicationFormDal, ApplicationFormDal>();
 
+            services.AddSingleton<IAppSelectedLanguageService, AppSelectedLanguageManager>();
+            services.AddSingleton<IAppSelectedLanguageDal, AppSelectedLanguageDal>();
+
+            services.AddSingleton<IBalanceService, BalanceManager>();
+            services.AddSingleton<IBalanceDal, BalanceDal>();
+
             services.AddSingleton<ICategoryService, CategoryManager>();
             services.AddSingleton<ICategoryDal, CategoryDal>();
 
@@ -98,6 +106,9 @@ namespace WebAPI
 
             services.AddSingleton<IUserService, UserManager>();
             services.AddSingleton<IUserDal, UserDal>();
+
+            services.Configure<MailSettings>(Configuration.GetSection("MailSettings"));
+            services.AddSingleton<IMailService, MailService>();
 
             services.AddCors(opt => opt.AddDefaultPolicy(
                 builder => builder.AllowAnyOrigin()

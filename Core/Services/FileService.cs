@@ -9,7 +9,6 @@ namespace Core.Services
 {
 	public class FileService
 	{
-
 		static string ROOT_PATH = "wwwroot";
 
 		static public async Task<string> UploadFile(IFormFile formFile, string subPath = "StaticFiles\\uploads", string fileName = null)

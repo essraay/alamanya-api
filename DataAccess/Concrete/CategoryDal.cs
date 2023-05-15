@@ -23,10 +23,10 @@ namespace DataAccess.Concrete
                     .Include(category => category.ApplicationForms).ThenInclude(form => form.Gender)
                     .Include(category => category.ApplicationForms).ThenInclude(form => form.AgeRange)
                     .Include(category => category.ApplicationForms).ThenInclude(form => form.Graduation)
-                    .Include(category => category.ApplicationForms).ThenInclude(form => form.GermanLevel);
+                    .Include(category => category.ApplicationForms).ThenInclude(form => form.GermanLevel)
+                    .Include(category => category.ApplicationForms).ThenInclude(form => form.Balance);
                 return query.SingleOrDefault();
             }
         }
     }
-
 }

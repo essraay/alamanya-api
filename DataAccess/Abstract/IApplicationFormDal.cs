@@ -1,5 +1,6 @@
 ﻿using Core.DataAccess;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,7 @@ namespace DataAccess.Abstract
     {
         List<ApplicationForm> GetAll(Expression<Func<ApplicationForm, bool>> filter = null);
         ApplicationForm GetById(int id);
+        Task<bool> AddDto(ApplicationFormDto applicationFormDto);
+
     }
 }

@@ -19,15 +19,15 @@ namespace WebAPI.Controllers
             _otherLanguageService = otherLanguageService;
         }
 
-        [HttpGet("getall")]
-        public IActionResult GetAll()
+        [HttpGet("getbyid")]
+        public IActionResult GetById(int id)
         {
-            var result = _otherLanguageService.GetAll();
+            var result = _otherLanguageService.GetById(id);
             if (result.Success)
             {
                 return Ok(result);
             }
-            return BadRequest(result.Message);
+            return BadRequest(result);
         }
 
     }

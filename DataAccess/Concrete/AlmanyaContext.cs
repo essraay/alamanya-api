@@ -19,9 +19,11 @@ namespace DataAccess.Concrete
         }
 
         public DbSet<AgeRange> AgeRange { get; set; }
+        public DbSet<Balance> Balance { get; set; }
         public DbSet<Category> Category { get; set; }
         public DbSet<District> District { get; set; }
         public DbSet<ApplicationForm> ApplicationForm { get; set; }
+        public DbSet<AppSelectedLanguage> AppSelectedLanguage { get; set; }
         public DbSet<Gender> Gender { get; set; }
         public DbSet<DocumentFile> DocumentFile { get; set; }
         public DbSet<GermanLanguageLevel> GermanLanguageLevel { get; set; }
