@@ -104,6 +104,9 @@ namespace WebAPI
             services.AddSingleton<IProvincesService, ProvincesManager>();
             services.AddSingleton<IProvincesDal, ProvincesDal>();
 
+            services.AddSingleton<ISubCategoryService, SubCategoryManager>();
+            services.AddSingleton<ISubCategoryDal, SubCategoryDal>();
+
             services.AddSingleton<IUserService, UserManager>();
             services.AddSingleton<IUserDal, UserDal>();
 

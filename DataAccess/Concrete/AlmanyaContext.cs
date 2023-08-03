@@ -14,8 +14,8 @@ namespace DataAccess.Concrete
         {
             var serverVersion = new MySqlServerVersion(new Version(8, 0, 28));
 
-            optionsBuilder.UseMySql(@"Server=localhost; database=almanya; uid=esra; pwd=Esra.1513", serverVersion);
-            //optionsBuilder.UseMySql(@"Server=localhost; database=almanya; uid=root; pwd=1513", serverVersion);
+            //optionsBuilder.UseMySql(@"Server=localhost; database=almanya; uid=esra; pwd=Esra.1513", serverVersion);
+            optionsBuilder.UseMySql(@"Server=localhost; database=almanya; uid=root; pwd=1513", serverVersion);
         }
 
         public DbSet<AgeRange> AgeRange { get; set; }
@@ -31,6 +31,7 @@ namespace DataAccess.Concrete
         public DbSet<Nationality> Nationality { get; set; }
         public DbSet<OtherLanguage> OtherLanguage { get; set; }
         public DbSet<Provinces> Provinces { get; set; }
+        public DbSet<SubCategory> SubCategory { get; set; }
         public DbSet<User> User { get; set; }
 
     }

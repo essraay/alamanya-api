@@ -16,15 +16,7 @@ namespace DataAccess.Concrete
         {
             using (AlmanyaContext context = new AlmanyaContext())
             {
-                var query = context.Category.Where(item => item.Id == id)
-                    .Include(category => category.ApplicationForms).ThenInclude(form => form.Provinces)
-                    .Include(category => category.ApplicationForms).ThenInclude(form => form.District)
-                    .Include(category => category.ApplicationForms).ThenInclude(form => form.Nationality)
-                    .Include(category => category.ApplicationForms).ThenInclude(form => form.Gender)
-                    .Include(category => category.ApplicationForms).ThenInclude(form => form.AgeRange)
-                    .Include(category => category.ApplicationForms).ThenInclude(form => form.Graduation)
-                    .Include(category => category.ApplicationForms).ThenInclude(form => form.GermanLevel)
-                    .Include(category => category.ApplicationForms).ThenInclude(form => form.Balance);
+                var query = context.Category.Where(item => item.Id == id);
                 return query.SingleOrDefault();
             }
         }

@@ -15,6 +15,5 @@ namespace DataAccess.Abstract
         List<ApplicationForm> GetAll(Expression<Func<ApplicationForm, bool>> filter = null);
         ApplicationForm GetById(int id);
         Task<bool> AddDto(ApplicationFormDto applicationFormDto);
-
     }
 }

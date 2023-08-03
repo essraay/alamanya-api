@@ -14,6 +14,6 @@ namespace Business.Abstract
         IDataResult<List<ApplicationForm>> GetAll(Expression<Func<ApplicationForm, bool>> filter = null);
         IDataResult<ApplicationForm> GetById(int id);
         IResult Add(ApplicationForm applicationForm);
-        IResult Delete(ApplicationForm applicationForm);
+        IResult Update(ApplicationForm applicationForm);
     }
 }

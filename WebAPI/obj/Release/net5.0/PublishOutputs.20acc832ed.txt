@@ -29,6 +29,10 @@ C:\Users\esra-\Desktop\Kobizon\Almanya\alamanya-api\WebAPI\obj\Release\net5.0\Pu
 C:\Users\esra-\Desktop\Kobizon\Almanya\alamanya-api\WebAPI\obj\Release\net5.0\PubTmp\Out\wwwroot\images\obmLogo.jpg
 C:\Users\esra-\Desktop\Kobizon\Almanya\alamanya-api\WebAPI\obj\Release\net5.0\PubTmp\Out\wwwroot\index.html
 C:\Users\esra-\Desktop\Kobizon\Almanya\alamanya-api\WebAPI\obj\Release\net5.0\PubTmp\Out\wwwroot\settings.svg
+C:\Users\esra-\Desktop\Kobizon\Almanya\alamanya-api\WebAPI\obj\Release\net5.0\PubTmp\Out\wwwroot\StaticFiles\exports\FKGQFGFLIAYD.xlsx
+C:\Users\esra-\Desktop\Kobizon\Almanya\alamanya-api\WebAPI\obj\Release\net5.0\PubTmp\Out\wwwroot\StaticFiles\exports\PMLHCDAFDQLG.xlsx
+C:\Users\esra-\Desktop\Kobizon\Almanya\alamanya-api\WebAPI\obj\Release\net5.0\PubTmp\Out\wwwroot\StaticFiles\exports\TQUONVWGEBOM.xlsx
+C:\Users\esra-\Desktop\Kobizon\Almanya\alamanya-api\WebAPI\obj\Release\net5.0\PubTmp\Out\wwwroot\StaticFiles\exports\WOTVVJHYDXGR.xlsx
 C:\Users\esra-\Desktop\Kobizon\Almanya\alamanya-api\WebAPI\obj\Release\net5.0\PubTmp\Out\wwwroot\StaticFiles\images\AXSOXDUGRFTF.pdf
 C:\Users\esra-\Desktop\Kobizon\Almanya\alamanya-api\WebAPI\obj\Release\net5.0\PubTmp\Out\wwwroot\StaticFiles\images\BUOXUFWSLKFN.pdf
 C:\Users\esra-\Desktop\Kobizon\Almanya\alamanya-api\WebAPI\obj\Release\net5.0\PubTmp\Out\wwwroot\StaticFiles\images\BWDTHFSPYJRW.pdf

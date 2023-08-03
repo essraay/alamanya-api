@@ -19,8 +19,7 @@ namespace DataAccess.Concrete
             {
                 return filter == null ? context.Set<Provinces>().Include(item => item.Districts).ToList() :
                     context.Set<Provinces>().Where(filter).Include(item => item.Districts).ToList();
-            }
-            
+            }      
         }
         
         public Provinces GetById(int id)
@@ -31,6 +30,5 @@ namespace DataAccess.Concrete
                     .Include(app => app.Districts).Where(app => app.Id == id).SingleOrDefault();
             }
         }
-
     }
 } 

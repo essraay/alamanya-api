@@ -3,6 +3,9 @@ using ClosedXML.Excel;
 using Core.Entities.Concrete;
 using Core.Services;
 using DocumentFormat.OpenXml.Drawing.Charts;
+using DocumentFormat.OpenXml.Office2010.Excel;
+using DocumentFormat.OpenXml.Spreadsheet;
+using DocumentFormat.OpenXml.Wordprocessing;
 using Entities.Concrete;
 using Entities.DTOs;
 using Microsoft.AspNetCore.Authorization;
@@ -12,6 +15,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Linq.Expressions;
+using System.Net.WebSockets;
 using System.Threading.Tasks;
 
 namespace WebAPI.Controllers
@@ -37,23 +42,24 @@ namespace WebAPI.Controllers
             string nationality,
             string ageRange,
             string germanLevel,
+            string subCategory,
             string category,
             string province,
             string balance
         )
         {
-            //MailRequest mailRequest = new() { ToEmail = "170541071@firat.edu.tr", Subject = "En Personal Başvuru Formu", Body = "Başvurunuz bize ulaşmıştır." };
-
-            //await _mailService.SendEmailAsync(mailRequest);
             var result = _formService.GetAll(x =>
                 (gender != null ? x.GenderId.ToString() == gender : true) &&
                 (dualNationality != null ? x.DualNationality.ToString() == dualNationality : true) &&
                 (nationality != null ? x.NationalityId.ToString() == nationality : true) &&
                 (ageRange != null ? x.AgeRangeId.ToString() == ageRange : true) &&
                 (germanLevel != null ? x.GermanLevelId.ToString() == germanLevel : true) &&
+                (subCategory != null ? x.SubCategoryId.ToString() == subCategory : true) &&
                 (category != null ? x.CategoryId.ToString() == category : true) &&
                 (province != null ? x.ProvincesId.ToString() == province : true) &&
-                (balance != null ? x.BalanceId.ToString() == balance : true)
+                (balance != null ? x.BalanceId.ToString() == balance : true) &&
+                x.IsActive
+
             );
             if (result.Success)
             {
@@ -61,6 +67,7 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result.Message);
         }
+
 
         //string category
         [HttpGet("export")]
@@ -70,6 +77,7 @@ namespace WebAPI.Controllers
             string nationality,
             string ageRange,
             string germanLevel,
+            string subCategory,
             string category,
             string province,
             string balance
@@ -84,6 +92,7 @@ namespace WebAPI.Controllers
                 (nationality != null ? x.NationalityId.ToString() == nationality : true) &&
                 (ageRange != null ? x.AgeRangeId.ToString() == ageRange : true) &&
                 (germanLevel != null ? x.GermanLevelId.ToString() == germanLevel : true) &&
+                (subCategory != null ? x.SubCategoryId.ToString() == subCategory : true) &&
                 (category != null ? x.CategoryId.ToString() == category : true) &&
                 (province != null ? x.ProvincesId.ToString() == province : true) &&
                 (balance != null ? x.BalanceId.ToString() == balance : true)
@@ -96,6 +105,7 @@ namespace WebAPI.Controllers
             dataTable.Columns.Add("Cinsiyet", typeof(string));
             dataTable.Columns.Add("Yaş Aralığı", typeof(string));
             dataTable.Columns.Add("Kategori", typeof(string));
+            dataTable.Columns.Add("Meslek", typeof(string));
             dataTable.Columns.Add("Almanca Dil Seviyesi", typeof(string));
             dataTable.Columns.Add("Uyruk", typeof(string));
             dataTable.Columns.Add("İl", typeof(string));
@@ -108,7 +118,8 @@ namespace WebAPI.Controllers
                     item.Name, 
                     item.Surname,
                     item.Gender.Name, 
-                    item.AgeRange.Range, 
+                    item.AgeRange.Range,
+                    item.SubCategory.Name,
                     item.Category.CategoryName, 
                     item.GermanLevel.Level,
                     item.Nationality.Name,
@@ -129,11 +140,12 @@ namespace WebAPI.Controllers
                 worksheet.Cell(1, 2).Value = "Soyadı";
                 worksheet.Cell(1, 3).Value = "Cinsiyeti";
                 worksheet.Cell(1, 4).Value = "Yaş Aralığı";
-                worksheet.Cell(1, 5).Value = "Başvurulan Meslek";
-                worksheet.Cell(1, 6).Value = "Almanca Dil Seviyesi";
-                worksheet.Cell(1, 7).Value = "Uyruk";
-                worksheet.Cell(1, 8).Value = "İl";
-                worksheet.Cell(1, 9).Value = "Denklik";
+                worksheet.Cell(1, 5).Value = "Kategori";
+                worksheet.Cell(1, 6).Value = "Meslek";
+                worksheet.Cell(1, 7).Value = "Almanca Dil Seviyesi";
+                worksheet.Cell(1, 8).Value = "Uyruk";
+                worksheet.Cell(1, 9).Value = "İl";
+                worksheet.Cell(1, 10).Value = "Denklik";
   
 
 
@@ -194,6 +206,8 @@ namespace WebAPI.Controllers
                 dto.applicationForm.OtherFile = await FileService.UploadFile(dto.otherFile);
             }
 
+            dto.applicationForm.CreatedAt = DateTime.Now;
+
             var result = _formService.Add(dto.applicationForm);
             if (result.Success)
             {
@@ -202,15 +216,18 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpPost("delete")]
-        public IActionResult Delete(ApplicationForm form)
+        [HttpPost("disable")]
+        public IActionResult Update(ApplicationForm applicationForm)
         {
-            var result = _formService.Delete(form);
+            var existingForm = _formService.GetById(applicationForm.Id).Data;
+            existingForm.IsActive = false;
+            var result = _formService.Update(existingForm);
             if (result.Success)
             {
                 return Ok(result);
             }
             return BadRequest(result);
         }
+
     }
 }

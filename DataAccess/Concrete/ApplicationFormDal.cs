@@ -3,6 +3,8 @@ using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
+using Org.BouncyCastle.Math.EC.Rfc7748;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +23,7 @@ namespace DataAccess.Concrete
 
         public List<ApplicationForm> GetAll(Expression<Func<ApplicationForm, bool>> filter = null)
         {
+
             using (AlmanyaContext context = new AlmanyaContext())
             {
                 var query = context.ApplicationForm
@@ -32,9 +35,10 @@ namespace DataAccess.Concrete
                     .Include(item => item.Gender)
                     .Include(item => item.AgeRange)
                     .Include(item => item.Graduation)
+                    .Include(item => item.SubCategory)
                     .Include(item => item.AppSelectedLanguages).ThenInclude(x => x.OtherLanguage)
                     .Include(item => item.GermanLevel).AsQueryable();
-
+                
                 if (filter != null) query = query.Where(filter);
 
                 return query.ToList();
@@ -55,6 +59,7 @@ namespace DataAccess.Concrete
                     .Include(item => item.AgeRange)
                     .Include(item => item.Graduation)
                     .Include(item => item.GermanLevel)
+                    .Include(item => item.SubCategory)
                     .Include(item => item.AppSelectedLanguages).ThenInclude(x => x.OtherLanguage)
                     .AsQueryable();
                 return query.SingleOrDefault();

@@ -11,8 +11,10 @@ namespace Entities.Concrete
     {
         public int Id { get; set; }
         public string CategoryName { get; set; }
-        public string ImagePath { get; set; }
+        public int SubCategoryId { get; set; }
 
-        public List<ApplicationForm> ApplicationForms { get; set; }
+        //public List<ApplicationForm> ApplicationForms { get; set; }
+        public SubCategory SubCategory { get; set; }
+
     }
 }
